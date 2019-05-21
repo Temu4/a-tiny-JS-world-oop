@@ -7,12 +7,13 @@ class Creature {
     this.age = age;
     this.legs = legs;
     this.hobby = hobby;
-  }
+  };
 }
 
 class Human extends Creature {
   constructor(gender, name, age, hobby, legs = 2, hands = 2) {
-    super('human', gender, name, age, hobby, legs, hands);
+    super('human', gender, name, age, hobby, legs);
+    this.hands = hands;
   }
 }
 
@@ -31,7 +32,6 @@ class Man extends Human {
 class Woman extends Human {
   constructor(name, age, hobby) {
     super('female', name, age, hobby);
-    this.greeting = this.greeting.bind(this);
   }
   greeting() {
     return `\tHi! I am <strong>${this.name}</strong>. I'm ${this.age}. I'm a ${this.species}, ${this.gender}.
